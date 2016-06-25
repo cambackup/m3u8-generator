@@ -169,5 +169,6 @@ crashlytics-build.properties
 fabric.properties
 playlist.py
 .venv
-
+.idea
+.idea/*
 
