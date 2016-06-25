@@ -9,7 +9,10 @@ Tested on :
 Python 2.7.5 & 3.5
 
 ### Install
-clone this repo
+pip :
+`pip install m3u8-generator`
+
+clone this repo:
 `git clone git@github.com:cambackup/m3u8-generator.git`
 
 This is made using the draft [https://tools.ietf.org/html/draft-pantos-http-live-streaming-08](https://tools.ietf.org/html/draft-pantos-http-live-streaming-08)
