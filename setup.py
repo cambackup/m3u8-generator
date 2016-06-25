@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = "m3u8-generator",
-    version = "1.4",
+    version = "1.5",
     author='cambackup.com',
     author_email='info@cambackup.com',
     description = ("m3u8 playlist generator"),

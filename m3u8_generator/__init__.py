@@ -34,7 +34,7 @@ class PlaylistGenerator(object):
         header = "#EXTM3U\n#EXT-X-VERSION:{version}\n#EXT-X-MEDIA-SEQUENCE:{sequence}\n#EXT-X-TARGETDURATION:{duration}".format(version=self.version, sequence=self.sequence, duration=self.duration).strip()
 
         if self.end_playlist:
-            return "#EXT-X-ENDLIST\n{}".format(header)
+            return "{}\n#EXT-X-ENDLIST".format(header)
         else:
             return header
 
