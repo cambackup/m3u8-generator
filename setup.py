@@ -1,14 +1,13 @@
-import setuptools
+from setuptools import setup
 
-setuptools.setup(name='m3u8-generator',
-                 version=1.1,
-                 description='m3u8 playlist generator',
-                 author='cambackup.com',
-                 author_email='info@cambackup.com',
-                 url='https://github.com/cambackup/m3u8-generator',
-                 py_modules=['m3u8_generator'],
-                 install_requires=[],
-                 license='MIT License',
-                 zip_safe=False,
-                 keywords='m3u8 generaror',
-                 )
+setup(
+    name = "m3u8-generator",
+    version = "0.0.14",
+    author='cambackup.com',
+    author_email='info@cambackup.com',
+    description = ("m3u8 playlist generator"),
+    keywords = "m3u8 playlist generator",
+    url='https://github.com/cambackup/m3u8-generator',
+    packages=['m3u8_generator'],
+    include_package_data=True,
+)
