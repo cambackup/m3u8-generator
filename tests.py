@@ -60,6 +60,21 @@ class TestPlaylistCase(unittest.TestCase):
         header = PlaylistGenerator(self.playlist_entries, version=3)._m3u8_header_template()
         self.assertTrue('EXT-X-MEDIA-SEQUENCE:0' in header)
 
+    def test_end_of_playlist(self):
+        """Ensures that the end playlist is included"""
+        playlist = PlaylistGenerator(self.playlist_entries, version=3).generate()
+        self.assertTrue('#EXT-X-ENDLIST' in playlist)
+
+    def test_end_of_is_included(self):
+        """Ensures that the end playlist is included"""
+        playlist = PlaylistGenerator(self.playlist_entries, version=3).generate()
+        self.assertTrue('#EXT-X-ENDLIST' in playlist)
+
+    def test_end_of_is_not_included(self):
+        """Ensures that the end playlist is included"""
+        playlist = PlaylistGenerator(self.playlist_entries, version=3)
+        playlist.end_playlist = False
+        self.assertTrue('#EXT-X-ENDLIST' not in playlist.generate())
 
 if __name__ == '__main__':
     unittest.main()

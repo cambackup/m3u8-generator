@@ -8,7 +8,7 @@ class PlaylistGenerator(object):
         if playlist_entries == None:
             raise StandardError
 
-        self.end_playlist = False
+        self.end_playlist = True
         self.playlist_entries = playlist_entries
         self.version = version
         self.sequence = 0
@@ -26,12 +26,17 @@ class PlaylistGenerator(object):
 
         return playlist.replace(" ", "")
 
+
     def _generate(self):
         return self._generate_playlist()
 
     def _m3u8_header_template(self):
-        header = "#EXTM3U\n#EXT-X-VERSION:{version}\n#EXT-X-MEDIA-SEQUENCE:{sequence}\n#EXT-X-TARGETDURATION:{duration}"
-        return header.format(version=self.version, sequence=self.sequence, duration=self.duration).strip()
+        header = "#EXTM3U\n#EXT-X-VERSION:{version}\n#EXT-X-MEDIA-SEQUENCE:{sequence}\n#EXT-X-TARGETDURATION:{duration}".format(version=self.version, sequence=self.sequence, duration=self.duration).strip()
+
+        if self.end_playlist:
+            return "#EXT-X-ENDLIST\n{}".format(header)
+        else:
+            return header
 
     def duration(self):
         duration_total = 0
