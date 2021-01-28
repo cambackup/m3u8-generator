@@ -37,7 +37,7 @@ playlist_entries = [
 
         ]
 
-playlist = PlaylistGenarator(playlist_entries).generate()
+playlist = PlaylistGenerator(playlist_entries).generate()
 ```
 
 The idea of this is to use no dependecy and be as fast as possible,
