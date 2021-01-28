@@ -22,7 +22,7 @@ class PlaylistGenerator(object):
     def _generate_playlist_entries(self):
         playlist = ""
         for entry in self.playlist_entries:
-            playlist += "#EXTINF:{duration}\n{media}\n".format(duration=float(entry['duration']), media=(entry['name']))
+            playlist += "#EXT-X-DISCONTINUITY\n#EXTINF:{duration}\n{media}\n".format(duration=float(entry['duration']), media=(entry['name']))
 
         return playlist.replace(" ", "")
 
